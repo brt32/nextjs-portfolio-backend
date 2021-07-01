@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "events",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "jobTitle": {
+      "type": "string",
+      "required": true
+    },
+    "mainTechnologies": {
+      "type": "string",
+      "required": true
+    },
+    "difficultyLevel": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "herokuDemoWebsite": {
+      "type": "string"
+    },
+    "githubSourceCode": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "datetime",
+      "required": false
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "events"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "Database": {
+      "type": "string"
+    }
+  }
+}
