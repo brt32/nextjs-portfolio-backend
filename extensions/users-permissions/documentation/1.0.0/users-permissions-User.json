@@ -1263,7 +1263,7 @@
                 "difficultyLevel",
                 "description",
                 "image",
-                "isPublished"
+                "isUpcoming"
               ],
               "properties": {
                 "id": {
@@ -1305,10 +1305,13 @@
                 "user": {
                   "type": "string"
                 },
-                "isPublished": {
+                "isUpcoming": {
                   "type": "boolean"
                 },
-                "Database": {
+                "applicationType": {
+                  "type": "string"
+                },
+                "database": {
                   "type": "string"
                 },
                 "published_at": {

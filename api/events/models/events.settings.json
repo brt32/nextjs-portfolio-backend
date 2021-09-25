@@ -66,12 +66,15 @@
       "model": "user",
       "via": "events"
     },
-    "isPublished": {
+    "isUpcoming": {
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": true
     },
-    "Database": {
+    "applicationType": {
+      "type": "string"
+    },
+    "database": {
       "type": "string"
     }
   }

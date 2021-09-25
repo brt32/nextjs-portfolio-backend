@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/02/2021 12:29:42 AM"
+    "x-generation-date": "08/20/2021 11:24:49 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -297,6 +297,63 @@
             }
           }
         }
+      }
+    },
+    "/events/me": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Retrieve events document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Events"
+        ],
+        "parameters": []
       }
     },
     "/events/count": {
@@ -2795,7 +2852,7 @@
           "difficultyLevel",
           "description",
           "image",
-          "isPublished"
+          "isUpcoming"
         ],
         "properties": {
           "id": {
@@ -2951,11 +3008,14 @@
               }
             }
           },
-          "isPublished": {
+          "isUpcoming": {
             "type": "boolean",
-            "default": true
+            "default": false
           },
-          "Database": {
+          "applicationType": {
+            "type": "string"
+          },
+          "database": {
             "type": "string"
           },
           "published_at": {
@@ -2972,7 +3032,7 @@
           "mainTechnologies",
           "difficultyLevel",
           "description",
-          "isPublished"
+          "isUpcoming"
         ],
         "properties": {
           "title": {
@@ -3010,11 +3070,14 @@
           "user": {
             "type": "string"
           },
-          "isPublished": {
+          "isUpcoming": {
             "type": "boolean",
-            "default": true
+            "default": false
           },
-          "Database": {
+          "applicationType": {
+            "type": "string"
+          },
+          "database": {
             "type": "string"
           },
           "published_at": {
@@ -3259,7 +3322,7 @@
                 "difficultyLevel",
                 "description",
                 "image",
-                "isPublished"
+                "isUpcoming"
               ],
               "properties": {
                 "id": {
@@ -3301,10 +3364,13 @@
                 "user": {
                   "type": "string"
                 },
-                "isPublished": {
+                "isUpcoming": {
                   "type": "boolean"
                 },
-                "Database": {
+                "applicationType": {
+                  "type": "string"
+                },
+                "database": {
                   "type": "string"
                 },
                 "published_at": {
